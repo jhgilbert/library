@@ -19,61 +19,231 @@
 <body>
 
 <div class="row">
-    <div class="large-3 columns">
-        <div class="panel" style="padding-left: 40px;">
-            <ol>
-                <li><a ng-href="/getting_started">Getting Started</a></li>
-                <li><a ng-href="/navigating_bash">Navigating in Bash</a></li>
-                <li><a ng-href="/application_explanation">How Apps Work</a></li>
-            </ol>
+<div class="large-3 columns">
+    <div class="row">
+        <div class="large-11 columns">
+            <div class="panel" style="padding-left: 40px; min-height: 1000px;">
+                <ol>
+                    <li><a ng-href="/getting_started">Getting Started</a></li>
+                    <li><a ng-href="/using_terminal">Using Terminal</a></li>
+                    <li><a ng-href="/using_git">Using Git</a></li>
+                </ol>
+            </div>
         </div>
     </div>
-    <div class="large-9 columns" ng-view>
-        <h1 class="pretty">Getting Started</h1>
-        <p>Welcome to your new development environment! This is going to be a little overwhelming at first.</p>
 
-        <p>As you've probably noticed, your environment looks something like this:</p>
+</div>
+<div class="large-9 columns" ng-view>
+<h1 class="pretty">Getting Started</h1>
+<p>Welcome to your new development environment! This is going to be a little overwhelming at first.</p>
 
-        <img src="img/drive.png" />
+<p>Not to worry. Your friend Jane will hook you up. This is Jane:</p>
 
-        <p>The whole thing is really just a folder full of shortcuts, but for the sake of clarity, we're going to call this your
-            <strong>environment desktop</strong> from now on.</p>
-
-        <p>Let's examine the items on your environment desktop in more detail.</p>
-
-        <h2>KEEP_OUT</h2>
-
-        <p>This one is somewhat self-explanatory, but you know what, I'm not the boss of you. If you want to play it safe, keep out.
-        If you're feeling adventurous, you can install apps into this directory after downloading them from
-            <a href="http://portableapps.com">Portable Apps</a>, and then add shortcuts to those apps onto your environment desktop.</p>
-
-        <p>Just know that some of the files in KEEP_OUT are delicate, and messing with them could break your environment.</p>
-
-        <h2>Library</h2>
-        <p>You must be already a bit familiar with what the Library does, if you're reading this page! The Library contains
-        a bunch of training materials for you to read, all accessible from one index.html page that you can drag into
-            your browser..</p>
-
-        <p>What you may not have realized is that the Library is magic -- it has the capability to sync with my version,
-            which means you can update it with fresh or corrected material after I add it on my end. We'll get into
-        how to do that a bit later.</p>
-
-        <h2>Notepad++</h2>
-        <p>This is your code editor -- you'll use it to edit website files, Ruby programs, and anything else that needs
-        editing. It supports multiple languages. Go ahead, double-click on it to pop open a new file.</p>
-
-        <p>It should look something like this:</p>
-        <img src="img/notepad_new.png" />
-
-        <p>Click on <strong>Language</strong> in the top menu to browse your options. HTML, Ruby, JavaScript, and more are
-        included. Fancy.</p>
-
-        <p>But this is a blank file, which is no fun. Let's open a file that already exists. Click
-        <strong>File > Open</strong> and browse to your environment desktop (you may have to navigate up a few
-        directories). Click on <strong>Library</strong> and then <strong>index</strong> to open ... this exact file.</p>
-
-        <p>Whoa. We're in the Matrix. As you will see if you press Ctrl+F and run a search for <strong>Matrix</strong></p>
+<div class="panel" style="margin-bottom: 20px;">
+    <div class="row">
+        <div class="large-6 columns">
+            <img src="img/bigjane.png" />
+        </div>
+        <div class="large-6 columns" style="vertical-align: middle; padding-top: 20px;">
+            <p><strong>Jane here to help.</strong></p>
+            <p><strong>Jane no know code, but Jane bad-ass bitch who making fire right about now.</strong></p>
+            <p><strong>If Jane can make fire, you can make code. Jane help you with Special Cavewoman Tips.</strong></p>
+        </div>
     </div>
+</div>
+
+
+<p>Okay then. As you've probably noticed, your environment looks something like this:</p>
+
+<img src="img/drive.png" />
+
+<p>The whole thing is really just a folder full of shortcuts, but for the sake of clarity, we're going to call this your
+    <strong>environment desktop</strong> from now on.</p>
+
+<p>Let's examine the items on your environment desktop in more detail.</p>
+
+<hr />
+
+<h2>KEEP_OUT</h2>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Stay away from KEEP_OUT, hungry bear, and dark forest.</p>
+            <p>Crog visit KEEP_OUT once. Crog never return.</p>
+        </div>
+    </div>
+</div>
+
+<p>This one is somewhat self-explanatory, but you know what, I'm not the boss of you. If you want to play it safe, keep out.
+    If you're feeling adventurous, you can install apps into this directory after downloading them from
+    <a href="http://portableapps.com">Portable Apps</a>, and then add shortcuts to those apps onto your environment desktop.</p>
+
+<p>Just know that some of the files in KEEP_OUT are delicate, and messing with them could break your environment.</p>
+
+<hr />
+
+<h2>Library</h2>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Library like village Wise Man.</p>
+            <p>Library tell you how to catch tiger by tail.</p>
+        </div>
+    </div>
+</div>
+
+<p>You must be already a bit familiar with what the Library does, if you're reading this page! The Library contains
+    a bunch of training materials for you to read, all accessible from one index.html page that you can drag into
+    your browser..</p>
+
+<p>What you may not have realized is that the Library is magic -- it has the capability to sync with my version,
+    which means you can update it with fresh or corrected material after I add it on my end. We'll get into
+    how to do that a bit later.</p>
+
+<hr />
+
+<h2>Notepad++</h2>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Notepad++ your cave wall.</p>
+            <p>You want to make codething, you make in Notepad++.</p>
+        </div>
+    </div>
+</div>
+<br />
+
+<p>This is your code editor -- you'll use it to edit website files, Ruby programs, and anything else that needs
+    editing. It supports multiple languages. Go ahead, double-click on it to pop open a new file.</p>
+
+<p>It should look something like this:</p>
+<img src="img/notepad_new.png" />
+
+<p>Click on <strong>Language</strong> in the top menu to browse your options. HTML, Ruby, JavaScript, and more are
+    included. Fancy.</p>
+
+<p>But this is a blank file, which is no fun. Let's open a file that already exists. Click
+    <strong>File > Open</strong> and browse to your environment desktop (you may have to navigate up a few
+    directories). Click on <strong>Library</strong> and then <strong>index</strong> to open ... this exact file.</p>
+
+<p>Whoa. We're in the Matrix ... as you will see if you press Ctrl+F and run a search for <strong>Matrix</strong>:</p>
+
+<img src="img/matrix.png" />
+
+<p>Notice that in the above picture, nothing comes after that last paragraph ... because <i>I am writing the rest of it right now</i>.
+    I just blew your mind.</p>
+
+<p>Anyway, that's what Notepad++ does. You can go ahead and close out of it now.</p>
+
+<div class="panel">
+    <p><strong>Note:</strong> Anytime you want to edit a file, you'll have to open Notepad++ and use <strong>File > Open</strong>
+        to surf to the file, unless you feel like manually setting Notepad++ as every individual file's default program.
+        I was too lazy; perhaps you are not. I leave it to you.</p>
+</div>
+
+<hr />
+
+<h2>TeamViewer</h2>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>TeamViewer let you commune with codegods??</p>
+            <p><i>TeamViewer magical portal to codegods!!!</i></p>
+        </div>
+    </div>
+</div>
+
+<p>Sometimes you need to phone a friend ... except phoning a friend really sucks when you're trying to use a computer
+    that your friend can't see. Wouldn't it be easier to hand your computer over to that talented friend and just let
+    him or her go to town on it?</p>
+
+<p>TeamViewer lets you do just that. Double-click on it to start it up. You should see something like this:</p>
+
+<img src="img/TeamViewer.png" />
+
+<p>The <strong>Your ID</strong> and <strong>Password</strong> fields are all the information your friend needs
+    to take over your computer right in front of you. Getting help from the codegods is easy -- no ritual sacrifices
+    necessary.</p>
+
+<hr />
+
+<h2>Your Projects</h2>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Your Projects like big thick leather pouch made from buffalo scrotum.</p>
+            <p>Put all code in big leather buffalo scrotum for safest keeping!</p>
+        </div>
+    </div>
+</div>
+
+<p>You should keep all of your work in <strong>Your Projects</strong> -- not only that, but <strong>you
+    should keep all of your work within one of the directories that's already in Your Projects</strong>. This is
+    important for reasons that will become clearer to you when you understand more about version control.</p>
+
+<p>That means that everything you do should go into <strong>web_projects</strong>, <strong>ruby_projects</strong>,
+    and so on.</p>
+
+<p>It's okay to make subfolders within those folders -- like putting a <strong>my_first_website</strong> directory in
+    <strong>web_projects</strong>. You can, and should, organize your projects into folders when they're made up of
+    more than one file.</p>
+
+<hr />
+
+<h2>Terminal</h2>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Using Terminal like hunting fish with sharp rock.</p>
+            <p>Terminal take some time to learn.</p>
+        </div>
+    </div>
+</div>
+
+<p>Terminal is a topic in and of itself, and you'll spend several days, if not weeks, just learning how to
+    navigate it. In fact, we'll cover the basics in the next section.</p>
+
+<p>For now, here's what you need to know about Terminal:
+<ul>
+    <li>It allows you to quickly navigate the file system of your computer</li>
+    <li>You can use Terminal to create lots of files very rapidly, search files, and so on</li>
+    <li>It allows you to carry out technical tasks that aren't possible otherwise, such as starting a web server</li>
+    <li>It is often a developer's main method of communication with a Linux server (what the big kids use)</li>
+    <li>You will use it to run Ruby programs</li>
+    <li>You will use it to set up and query a database</li>
+</ul>
+</p>
+</div>
 </div>
 
 <script>

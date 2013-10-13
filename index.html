@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Foundation 4</title>
+
+
+    <link rel="stylesheet" href="css/foundation.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+
+
+    <script src="js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+<div class="row">
+    <div class="large-3 columns">
+        <div class="panel" style="padding-left: 40px;">
+            <ol>
+                <li><a ng-href="/getting_started">Getting Started</a></li>
+                <li><a ng-href="/navigating_bash">Navigating in Bash</a></li>
+                <li><a ng-href="/application_explanation">How Apps Work</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="large-9 columns" ng-view>
+        <h1 class="pretty">Getting Started</h1>
+        <p>Welcome to your new development environment! This is going to be a little overwhelming at first.</p>
+
+        <p>As you've probably noticed, your environment looks something like this:</p>
+
+        <img src="img/drive.png" />
+
+        <p>The whole thing is really just a folder full of shortcuts, but for the sake of clarity, we're going to call this your
+            <strong>environment desktop</strong> from now on.</p>
+
+        <p>Let's examine the items on your environment desktop in more detail.</p>
+
+        <h2>KEEP_OUT</h2>
+
+        <p>This one is somewhat self-explanatory, but you know what, I'm not the boss of you. If you want to play it safe, keep out.
+        If you're feeling adventurous, you can install apps into this directory after downloading them from
+            <a href="http://portableapps.com">Portable Apps</a>, and then add shortcuts to those apps onto your environment desktop.</p>
+
+        <p>Just know that some of the files in KEEP_OUT are delicate, and messing with them could break your environment.</p>
+
+        <h2>Library</h2>
+        <p>You must be already a bit familiar with what the Library does, if you're reading this page! The Library contains
+        a bunch of training materials for you to read, all accessible from one index.html page that you can drag into
+            your browser..</p>
+
+        <p>What you may not have realized is that the Library is magic -- it has the capability to sync with my version,
+            which means you can update it with fresh or corrected material after I add it on my end. We'll get into
+        how to do that a bit later.</p>
+
+        <h2>Notepad++</h2>
+        <p>This is your code editor -- you'll use it to edit website files, Ruby programs, and anything else that needs
+        editing. It supports multiple languages. Go ahead, double-click on it to pop open a new file.</p>
+
+        <p>It should look something like this:</p>
+        <img src="img/notepad_new.png" />
+
+        <p>Click on <strong>Language</strong> in the top menu to browse your options. HTML, Ruby, JavaScript, and more are
+        included. Fancy.</p>
+
+        <p>But this is a blank file, which is no fun. Let's open a file that already exists. Click
+        <strong>File > Open</strong> and browse to your environment desktop (you may have to navigate up a few
+        directories). Click on <strong>Library</strong> and then <strong>index</strong> to open ... this exact file.</p>
+
+        <p>Whoa. We're in the Matrix.</p>
+    </div>
+</div>
+
+<script>
+    document.write('<script src=' +
+            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+            '.js><\/script>')
+</script>
+
+<script src="js/foundation.min.js"></script>
+<!--
+
+<script src="js/foundation/foundation.js"></script>
+
+<script src="js/foundation/foundation.dropdown.js"></script>
+
+<script src="js/foundation/foundation.placeholder.js"></script>
+
+<script src="js/foundation/foundation.forms.js"></script>
+
+<script src="js/foundation/foundation.tooltips.js"></script>
+
+-->
+
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>

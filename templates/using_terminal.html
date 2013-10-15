@@ -1,0 +1,221 @@
+<h1 class="pretty">Using Terminal</h1>
+
+<h2 id="starting_terminal">About Terminal</h2>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Terminal like dark forest with no flametorch.</p>
+            <p>... Don't worry, wild boar probably can't smell you.</p>
+        </div>
+    </div>
+</div>
+
+<p><strong>Terminal</strong> is also known as the <strong>Bash shell</strong>, plain old <strong>Bash</strong> (technically,
+    Bash is the language you're using to communicate with Terminal),
+    or <strong>the command line</strong>.</p>
+
+<p>There are subtle differences between these terms, but the only thing you really need to understand for now
+    is that when you need to Google how to do something on the command line, any of these terms may pop up in
+    the answers you see.</p>
+
+<p>Terminal is a way of communicating more directly with your computer. You're used to using software that uses graphics,
+    colors, menus, and other fancy things. Terminal's interface is much simpler, but the program itself is extremely powerful.</p>
+
+<p>Case in point: Simply typing <strong>sudo rm -rf /</strong> into Terminal will <em>wipe out your computer</em>.</p>
+
+<p>So, hey, don't do that, and be wary of any Terminal command you see in a forum where someone might be
+    messing with you. Places like <a href="http://stackoverflow.com">Stack Overflow</a> are well moderated (if a bit cranky
+    at times) and shouldn't cause that problem.</p>
+
+<p>Don't worry, most Terminal commands are safe. Just be very careful with <strong>sudo</strong>, <strong>rm</strong>,
+    and <strong>rm -rf</strong>. If you aren't sure a Terminal command is a good idea, ask for help.</p>
+
+<hr />
+
+<h2>What can you do with Terminal?</h2>
+
+<p>Here are a few things you might eventually want to do with Terminal:</p>
+
+<ul>
+    <li>Search for, and rename, every file on your system that matches a certain filename</li>
+    <li>Create files or folders in batches</li>
+    <li>Run Ruby programs</li>
+    <li>Search for information in a database</li>
+    <li>Communicate with a server or other remote machine</li>
+</ul>
+
+<p>There's no getting around it: If you become a professional programmer, you'll be working in Terminal.
+    Using Terminal can be frustrating at first, but eventually you'll appreciate its speed, power, and simplicity.</p>
+
+<hr />
+
+<h2>Opening Terminal</h2>
+
+<p>Click the <strong>Terminal</strong> shortcut on your environment desktop.</p>
+
+<p>You should see something like this:</p>
+
+<img src="img/terminal1.png" />
+
+<p>Scroll down to a set of files that all start with Terminal and then have a letter:</p>
+
+<img src="img/terminal2.png" />
+
+<p>Run the file that matches your USB drive letter, which varies from machine to machine. Note that in the screenshot
+    above, the drive letter is F: (my USB disk is called PATRIOT, and it's listed as F: on the lefthand side), so I would
+    run <strong>Terminal F</strong>.</p>
+
+<p>When you open the file, a black box will appear, and some odd stuff might happen for a moment, or the box may just
+    sit there for a moment. But eventually, you should get a dollar-sign prompt that looks something like this:</p>
+
+<img src="img/terminal3.png" />
+
+<p>That's it. That's all Terminal does. Bit of a letdown, no?</p>
+
+<p>Note that your prompt will look a bit different -- I'm Jennifer Gilbert and I'm using a computer named Brodie,
+    which is why that information appears in the screenshot.</p>
+
+<p>Anyway, you're now ready to use Terminal. Congratulations!</p>
+
+<hr />
+
+<h2>A few basic commands</h2>
+
+<p>Try the commands below in order. Anywhere you see "???" instead of a command, it's your job to guess the right one.</p>
+
+<table>
+    <tr>
+        <td>COMMAND</td>
+        <td>EXPLANATION</td>
+    </tr>
+    <tr>
+        <td>pwd</td>
+        <td><strong>pwd</strong> prints your working directory, so you know where you are. Terminal will probably tell you that
+            you're in a user folder -- something like <strong>/home/Jennifer Gilbert</strong>. You don't want that, because your username
+            may vary at another computer, which means you'll have trouble accessing anything you put in this directory
+            if you switch computers later. Let's get out of here!</td>
+    </tr>
+    <tr>
+        <td>cd&nbsp;/projects</td>
+        <td><strong>cd</strong> means "change directory", and we've switched to /projects. You'll spend lots of time in this folder --
+            it's the one linked from your environment desktop (listed there as <strong>Your Projects</strong>).</td>
+    </tr>
+    <tr>
+        <td>ls</td>
+        <td><strong>ls</strong> stands for "list", and it helps you see the files and folders in a directory. You
+            should see several rather obviously named folders.</td>
+    </tr>
+    <tr>
+        <td>cd&nbsp;ruby_projects</td>
+        <td>There's <strong>cd</strong> again, for "change directory."</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>How can you take a look around in this folder? It's one of the commands you've already used.</td>
+    </tr>
+    <tr>
+        <td>ruby&nbsp;sample_ruby_program.rb</td>
+        <td>When you listed the contents of the ruby_projects directory, you found a program in there. You can
+            use <strong>ruby</strong> and then the program name to run it. The output we get is pretty silly.</td>
+    </tr>
+    <tr>
+        <td>cd&nbsp..</td>
+        <td>This is how you move up one directory.</td>
+    </tr>
+    <tr>
+        <td>ruby&nbsp;ruby_projects/sample_ruby_program.rb</td>
+        <td>Hey, look at that -- you can still run the Ruby program, but you had to type a little more information
+            in order to point Terminal to the file. File locations are relative in Terminal.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Can you figure out how to change to the web_projects directory?</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>List the files and folders in the web_projects directory.</td>
+    </tr>
+    <tr>
+        <td>cd&nbsp;sample_project</td>
+        <td>Helpful tip: You could have just typed "cd sam" and then hit the Tab key. Tab will autocomplete
+            a path as long as you've typed enough to make it unique.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Take a look around the sample_project file. This looks familiar -- it's just a basic web project.</td>
+    </tr>
+    <tr>
+        <td>less&nbsp;index.html</td>
+        <td>It's a pain to have to open files all the time -- <strong>less</strong> lets you just take a quick
+            peek. When you're done looking around in index.html, <strong>q</strong> will exit you out of <strong>less</strong>.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Hm, I've forgotten where we are. Can you print your working directory in order to check?</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>We don't want to be in the sample_project directory anymore. Can you move one level up?</td>
+    </tr>
+    <tr>
+        <td>mkdir&nbsp;sample_project_2</td>
+        <td>Terminal lets you create directories. We've just made a folder called new_project.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Change your working directory so you're inside of new_project. For bonus points, use Tab to
+            autocomplete your destination.</td>
+    </tr>
+    <tr>
+        <td>touch&nbsp;index.html</td>
+        <td><strong>touch</strong> is like mkdir, but for individual files. You just made a blank file called index.html.</td>
+    </tr>
+    <tr>
+        <td>echo 'hello there!'</td>
+        <td>Well, that was silly -- we just got Terminal to say something, like you would with <strong>print</strong>
+            or <strong>puts</strong>. Note that single quotes are often safer than double quotes because they're more literal in Terminal --
+            if you used double quotes to run this command, you probably got a weird error. Double quotes are more flexible -- they
+        allow you to use variables and such within them. Single quotes mean "Just echo exactly what I said. Don't get fancy." But anyway,
+        what's the point of getting Terminal to print something?</td>
+    </tr>
+    <tr>
+        <td>echo&nbsp;'This&nbsp;is&nbsp;a&nbsp;brand&nbsp;new&nbsp;page!'&nbsp;>>&nbsp;index.html</td>
+        <td>Now you're fancy. You just printed something directly into your index.html file.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Take a quick peek at the contents of index.html to confirm that you did in fact print words into it.</td>
+    </tr>
+    <tr>
+        <td>python -m SimpleHTTPServer 9999</td>
+        <td>You may get a firewall warning from Windows on this one, but it's perfectly safe -- click "Allow Access."
+        Abandon Terminal for a moment and pop open Chrome. Point your browser to <strong>localhost:9999</strong>.
+        Look familiar? Hit refresh a few times, and watch what happens in Terminal. You're running a small local web server
+        (local meaning that it's not available outside of your own computer),
+        and what you're seeing each time you hit refresh is the GET request coming from your browser, and your server
+        fulfilling that request (hopefully successfully, in which case you will see the code 200, which means OK).
+        Try going to <strong>localhost:9999/another_page.html</strong>. What happens then? The browser gets an error
+        response from Terminal, and you can see in Terminal that the browser submitted a GET request for /another_page.html,
+        which Terminal was unable to find, because that file does not exist in your new_project folder. If it did, Terminal
+        would happily serve it!</td>
+    </tr>
+    <tr>
+        <td>Ctrl+C</td>
+        <td>This combination of keys is a common way to exit out of something in Terminal that you can't otherwise
+        escape from -- if you ever write a bad loop in Ruby that runs forever, Ctrl+C will get you out of that jam.
+        Other common methods of quitting are <strong>Ctrl+D</strong>, <strong>q</strong>, and <strong>exit</strong>.
+        It's not weird to have to try a few of them before you wrestle yourself free! At any rate, you just stopped your
+        server.</td>
+    </tr>
+
+
+</table>
+
+
+
+

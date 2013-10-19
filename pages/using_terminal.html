@@ -1,3 +1,38 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Foundation 4</title>
+
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+    <script src="../js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+<div class="row">
+<div class="large-3 columns">
+    <div class="row">
+        <div class="large-11 columns">
+            <div class="panel" style="padding-left: 40px; min-height: 1000px;">
+                <ol>
+                    <li><a href="getting_started.html">Getting Started</a></li>
+                    <li><a href="using_terminal.html">Using Terminal</a></li>
+                    <li><a href="using_git.html">Using Git</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="large-9 columns">
+
 <h1 class="pretty">Using Terminal</h1>
 
 <h2 id="starting_terminal">About Terminal</h2>
@@ -5,7 +40,7 @@
 <div class="panel jane">
     <div class="row">
         <div class="large-3 columns">
-            <img src="img/jane.png" />
+            <img src="../img/jane.png" />
         </div>
         <div class="large-9 columns">
             <h5 class="jane">JANE SAY:</h5><br />
@@ -60,11 +95,11 @@
 
 <p>You should see something like this:</p>
 
-<img src="img/terminal1.png" />
+<img src="../img/terminal1.png" />
 
 <p>Scroll down to a set of files that all start with Terminal and then have a letter:</p>
 
-<img src="img/terminal2.png" />
+<img src="../img/terminal2.png" />
 
 <p>Run the file that matches your USB drive letter, which varies from machine to machine. Note that in the screenshot
     above, the drive letter is F: (my USB disk is called PATRIOT, and it's listed as F: on the lefthand side), so I would
@@ -73,7 +108,7 @@
 <p>When you open the file, a black box will appear, and some odd stuff might happen for a moment, or the box may just
     sit there for a moment. But eventually, you should get a dollar-sign prompt that looks something like this:</p>
 
-<img src="img/terminal3.png" />
+<img src="../img/terminal3.png" />
 
 <p>That's it. That's all Terminal does. Bit of a letdown, no?</p>
 
@@ -84,10 +119,24 @@
 
 <hr />
 
-<h2>A few basic commands</h2>
+<h2>Terminal in Three Exercises</h2>
 
-<p>Try the commands below in order. Anywhere you see "???" instead of a command, it's your job to guess the right one.</p>
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="../img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Catch brainsweat neatly in stone bowl.</p>
+            <p>No leave on ground. Wild boars can smell fear.</p>
+        </div>
+    </div>
+</div>
 
+<p>Try the commands in each lesson in order. Anywhere you see "???" instead of a command, it's your job to guess the right one.</p>
+
+<h3>Lesson 1: Folder Basics</h3>
 <table>
     <tr>
         <td>COMMAND</td>
@@ -121,7 +170,8 @@
     <tr>
         <td>ruby&nbsp;sample_ruby_program.rb</td>
         <td>When you listed the contents of the ruby_projects directory, you found a program in there. You can
-            use <strong>ruby</strong> and then the program name to run it. The output we get is pretty silly.</td>
+            use <strong>ruby</strong> and then the program name to run it ("Ruby, please run the program that has this filename").
+            The output we get from the program is pretty much nonsense, so, no, you're not having a stroke.</td>
     </tr>
     <tr>
         <td>cd&nbsp..</td>
@@ -145,9 +195,40 @@
         <td>Helpful tip: You could have just typed "cd sam" and then hit the Tab key. Tab will autocomplete
             a path as long as you've typed enough to make it unique.</td>
     </tr>
+</table>
+
+<br />
+<h3>Lesson 2: A Pretend Web Project</h3>
+
+<p>You can use Terminal to create, edit, and delete files, though you can also accomplish the same thing in the
+    graphical user interface (GUI) that you're used to dealing with (you know, the one with the cute little icons).</p>
+
+<p>Believe it or not, if you stick with Terminal, you'll eventually find it faster and more convenient. While Terminal
+    won't replace your GUI on your own machine (especially when it comes to editing code),
+    it's often all you have to interact with when communicating with a remote machine, so it's important to practice
+    using it when you can.</p>
+
+<table>
+    <tr>
+        <td>COMMAND</td>
+        <td>EXPLANATION</td>
+    </tr>
+    <tr>
+        <td>cd /projects</td>
+        <td>There's that familiar command -- it'll take you to your projects folder from any directory in Terminal.
+            Just like clicking your heels together three times!</td>
+    </tr>
     <tr>
         <td>???</td>
-        <td>Take a look around the sample_project file. This looks familiar -- it's just a basic web project.</td>
+        <td>List the contents of your current directory.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Change your working directory to the sample_project folder.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Take a look around the sample_project folder. These files look familiar -- it's just a basic web project.</td>
     </tr>
     <tr>
         <td>less&nbsp;index.html</td>
@@ -163,7 +244,7 @@
         <td>We don't want to be in the sample_project directory anymore. Can you move one level up?</td>
     </tr>
     <tr>
-        <td>mkdir&nbsp;sample_project_2</td>
+        <td>mkdir&nbsp;new_project</td>
         <td>Terminal lets you create directories. We've just made a folder called new_project.</td>
     </tr>
     <tr>
@@ -180,8 +261,8 @@
         <td>Well, that was silly -- we just got Terminal to say something, like you would with <strong>print</strong>
             or <strong>puts</strong>. Note that single quotes are often safer than double quotes because they're more literal in Terminal --
             if you used double quotes to run this command, you probably got a weird error. Double quotes are more flexible -- they
-        allow you to use variables and such within them. Single quotes mean "Just echo exactly what I said. Don't get fancy." But anyway,
-        what's the point of getting Terminal to print something?</td>
+            allow you to use variables and such within them. Single quotes mean "Just echo exactly what I said. Don't get fancy." But anyway,
+            what's the point of getting Terminal to print something?</td>
     </tr>
     <tr>
         <td>echo&nbsp;'This&nbsp;is&nbsp;a&nbsp;brand&nbsp;new&nbsp;page!'&nbsp;>>&nbsp;index.html</td>
@@ -194,28 +275,117 @@
     <tr>
         <td>python -m SimpleHTTPServer 9999</td>
         <td>You may get a firewall warning from Windows on this one, but it's perfectly safe -- click "Allow Access."
-        Abandon Terminal for a moment and pop open Chrome. Point your browser to <strong>localhost:9999</strong>.
-        Look familiar? Hit refresh a few times, and watch what happens in Terminal. You're running a small local web server
-        (local meaning that it's not available outside of your own computer),
-        and what you're seeing each time you hit refresh is the GET request coming from your browser, and your server
-        fulfilling that request (hopefully successfully, in which case you will see the code 200, which means OK).
-        Try going to <strong>localhost:9999/another_page.html</strong>. What happens then? The browser gets an error
-        response from Terminal, and you can see in Terminal that the browser submitted a GET request for /another_page.html,
-        which Terminal was unable to find, because that file does not exist in your new_project folder. If it did, Terminal
-        would happily serve it!</td>
+            Abandon Terminal for a moment and pop open Chrome. Point your browser to <strong>localhost:9999</strong>.
+            Look familiar? Hit refresh a few times, and watch what happens in Terminal. You're running a small local web server
+            (local meaning that it's not available outside of your own computer),
+            and what you're seeing each time you hit refresh is the GET request coming from your browser, and your server
+            fulfilling that request (hopefully successfully, in which case you will see the code 200, which means OK).
+            Try going to <strong>localhost:9999/another_page.html</strong>. What happens then? The browser gets an error
+            response from Terminal, and you can see in Terminal that the browser submitted a GET request for /another_page.html,
+            which Terminal was unable to find, because that file does not exist in your new_project folder. If it did, Terminal
+            would happily serve it!</td>
     </tr>
     <tr>
         <td>Ctrl+C</td>
         <td>This combination of keys is a common way to exit out of something in Terminal that you can't otherwise
-        escape from -- if you ever write a bad loop in Ruby that runs forever, Ctrl+C will get you out of that jam.
-        Other common methods of quitting are <strong>Ctrl+D</strong>, <strong>q</strong>, and <strong>exit</strong>.
-        It's not weird to have to try a few of them before you wrestle yourself free! At any rate, you just stopped your
-        server.</td>
+            escape from -- if you ever write a bad loop in Ruby that runs forever, Ctrl+C will get you out of that jam.
+            Other common methods of quitting are <strong>Ctrl+D</strong>, <strong>q</strong>, and <strong>exit</strong>.
+            It's not weird to have to try a few of them before you wrestle yourself free! At any rate, you just stopped your
+            server.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Where are you? Print your working directory.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>List the contents of your current directory.</td>
+    </tr>
+    <tr>
+        <td>rm index.html</td>
+        <td>That file was fun to play with, but we don't really need it anymore. Let's get rid of it.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>Move up one directory.</td>
     </tr>
 
-
+    <tr>
+        <td>???</td>
+        <td>List the contents of your current directory.</td>
+    </tr>
+    <tr>
+        <td>rmdir new_project</td>
+        <td>Come to think of it, let's just get rid of the new_project folder altogether.</td>
+    </tr>
 </table>
 
+<br />
+<h3>Lesson 3: It's Challenge Time</h3>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="../img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Cloud God gave you Reading Eyes for reason.</p>
+            <p>Don't be Neanderthal! If Terminal give you output, read it.</p>
+        </div>
+    </div>
+</div>
+
+<p>Terminal is capable of running very complicated commands, but you'll likely use the same basic ones over and over.
+    <strong>pwd</strong>, <strong>cd</strong>, <strong>ls</strong>, <strong>touch</strong>, and <strong>ruby</strong> are all safe to use -- worst
+    case, you'll just get an error, but you won't break anything. Use <strong>rmdir</strong> and <strong>rm</strong> more carefully.</p>
+
+<p>I know Jane just told you, but <strong>read your output</strong>. Plenty of students will blindly follow
+    instructions without paying attention to the feedback that Terminal is giving. If you've mistyped a command,
+    you don't want to miss the "command not found" error that Terminal helpfully gave you, and then stumble ahead and wonder
+    several commands later why you're having trouble.</p>
+
+<p>Here's your challenge:</p>
+
+<ol>
+    <li>Close out of Terminal if you have it open.</li>
+    <li>Run Terminal again.</li>
+    <li>Create a new Ruby program in your ruby_projects folder using just Terminal. The program can be extremely simple.</li>
+    <li>Run the program.</li>
+    <li>Delete the program.</li>
+    <li>Working within the same Terminal window, create a new web project in the appropriate place (again, it can be very simple).</li>
+    <li>Run your new web project using SimpleHTTPServer, and visit it in your browser.</li>
+</ol>
+
+</div>
+</div>
+
+<script>
+    document.write('<script src=' +
+            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+            '.js><\/script>')
+</script>
+
+<script src="../js/foundation.min.js"></script>
+<!--
+
+<script src="js/foundation/foundation.js"></script>
+
+<script src="js/foundation/foundation.dropdown.js"></script>
+
+<script src="js/foundation/foundation.placeholder.js"></script>
+
+<script src="js/foundation/foundation.forms.js"></script>
+
+<script src="js/foundation/foundation.tooltips.js"></script>
+
+-->
+
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>
 
 
 

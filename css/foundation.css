@@ -3,6 +3,7 @@
 div.code {
     font-family: monospace;
     font-size: 14px;
+    line-height: 18px;
 }
 
 h1.pretty {

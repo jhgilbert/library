@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Foundation 4</title>
+
+    <link rel="stylesheet" href="../css/foundation.css">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+    <script src="../js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+
+<div class="row">
+<div class="large-3 columns">
+    <div class="row">
+        <div class="large-11 columns">
+            <div class="panel" style="padding-left: 40px;">
+                <h3>System Basics</h3>
+                <ol>
+                    <li><a href="getting_started.html">Getting Started</a></li>
+                    <li><a href="using_terminal.html">Using Terminal</a></li>
+                    <li><a href="using_git.html">Using Git</a></li>
+                </ol>
+            </div>
+            <div class="panel" style="padding-left: 40px;">
+                <h3>Databases</h3>
+                <ol>
+                    <li><a href="sql_1.html">Intro to SQL</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="large-9 columns">
+
+<h1 class="pretty">Beginning SQL</h1>
+<h2>About databases</h2>
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="../img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Database just big fancy spreadsheet.</p>
+            <p>Even dumb Crog could use spreadsheet.</p>
+        </div>
+    </div>
+</div>
+
+<p>If you've never used one before, the concept of a database is nebulous. It's easy to imagine a big, blurry
+    blob of data without much of an understand of how data gets into it, and how and when we would want to
+    retrieve data back out of it.
+</p>
+
+<p>Here's the simplest description of a database I can give you: It's just a multi-page spreadsheet.</p>
+
+<p>What if I asked you to pop open Google Drive and make me a spreadsheet of animals up for adoption?
+    You would probably organize it like this:</p>
+
+<img src="../img/adoptables.png" />
+
+<p>Databases are slightly more complicated, but they work in much the same way.</p>
+
+<p>Instead of spreadsheet pages, databases have <strong>tables</strong>. But an <strong>adoptable_pets</strong> table
+    in the Humane Society's database would look very similar to the spreadsheet above.</p>
+
+<hr />
+
+<h2>About SQL</h2>
+
+<p>SQL, or <strong>Structured Query Language</strong>, is a tool used to communicate with many popular database types,
+    such as MySQL or Postgres. It's okay if you've never heard of those &mdash; the important takeaway is that SQL can be
+    used to query, insert, modify, or delete data from many popular database types.</p>
+
+<p>Don't be intimidated by SQL &mdash; it's quite repetitive, and you'll develop a knack for it quickly.</p>
+
+<hr />
+
+<h2>Data types</h2>
+
+<p>Just like a spreadsheet, databases organize information into columns and rows. Each column in a database is of
+    a specific data type. Don't worry about memorizing all of these; you'll use some of them much more often
+    than others.</p>
+
+<table>
+    <tr>
+        <td>Data type</td>
+        <td>Category</td>
+        <td>Description</td>
+        <td>Examples</td>
+    </tr>
+    <tr>
+        <td>CHAR</td>
+        <td>text</td>
+        <td>A fixed length of 0-255 characters.</td>
+        <td>A postal code like <strong>CA</strong>, or a product code of consistent length that might be used
+            for inventory purposes.</td>
+    </tr>
+    <tr>
+        <td>VARCHAR</td>
+        <td>text</td>
+        <td>A variable length of 0-65,535 characters, but within an expected specified range.</td>
+        <td>A name, email address, street address, or other piece of information of a length that you can estimate
+            when designing your database.</td>
+    </tr>
+    <tr>
+        <td>TEXT</td>
+        <td>text</td>
+        <td>Up to 65,535 characters.</td>
+        <td>The description text of a product in an online store, a product review, or another message of some sort.</td>
+    </tr>
+    <tr>
+        <td>MEDIUMTEXT</td>
+        <td>text</td>
+        <td>Up to 16,777,215 characters.</td>
+        <td>An essay, blog post, or other medium piece of text.</td>
+    </tr>
+    <tr>
+        <td>LONGTEXT</td>
+        <td>text</td>
+        <td>Up to 4,294,967,295 characters.</td>
+        <td>A long essay, blog post, or other piece of text.</td>
+    </tr>
+    <tr>
+        <td>INT</td>
+        <td>number</td>
+        <td>A whole number.</td>
+        <td>12, 34, 1028, 6.</td>
+    </tr>
+    <tr>
+        <td>FLOAT</td>
+        <td>number</td>
+        <td>A decimal value stored in 4 bytes.</td>
+        <td>Scientific data or other data in which some loss of precision is acceptable; you probably won't be working with these much while you're learning,
+            but they do process quickly and can be valuable in large, complex calculations.</td>
+    </tr>
+    <tr>
+        <td>DOUBLE</td>
+        <td>number</td>
+        <td>A decimal value stored in 8 bytes.</td>
+        <td>Scientific data or other data in which some loss of precision is acceptable; you probably won't be working with these much while you're learning,
+            but they do process quickly and can be valuable in large, complex calculations.</td>
+    </tr>
+    <tr>
+        <td>DECIMAL</td>
+        <td>number</td>
+        <td>An exact value used when accuracy is very important.</td>
+        <td>A dollar amount or other measurement that requires precision and accuracy in calculations. Decimal calculations
+            are slower than float/double calculations.</td>
+    </tr>
+    <tr>
+        <td>DATE</td>
+        <td>date</td>
+        <td>The year, month, and day.</td>
+        <td>2013-10-31</td>
+    </tr>
+    <tr>
+        <td>DATETIME</td>
+        <td>date</td>
+        <td>The year, month, day, and time.</td>
+        <td>2013-10-31 16:13:00</td>
+    </tr>
+    <tr>
+        <td>TIME</td>
+        <td>date</td>
+        <td>The time without any other context.</td>
+        <td>16:13:00</td>
+    </tr>
+    <tr>
+        <td>YEAR</td>
+        <td>date</td>
+        <td>The year without any other information.</td>
+        <td>2013</td>
+    </tr>
+</table>
+
+<p>Unless you've specified otherwise in your database design, a value of <strong>NULL</strong> can also be
+    used in any of the above columns to note an empty "cell" in your imaginary spreadsheet (also known as an empty
+    value in your database).</p>
+
+<hr />
+
+<h2>About SQLite</h2>
+
+<p><strong>SQLite</strong> (pronounced "sequel-ite") is a lightweight database engine that we're going to use for
+    SQL practice. It's already installed on your USB key.</p>
+
+<h5>Advantages of SQLite</h5>
+<ul>
+    <li>No setup or configuration required</li>
+    <li>No database server required, which is good, because you don't even really know what that is yet</li>
+    <li>A quick, easy way to practice the SQL commands that are common to all sorts of databases</li>
+</ul>
+
+<h5>Disadvantages of SQLite</h5>
+<ul>
+    <li>It's unlikely to be what you use when building real-life applications intended for a large customer base</li>
+</ul>
+
+<p>If an SQL command works in SQLite, it's likely to translate just fine in Postgres or MySQL (both of which are more
+    complicated and confusing for a beginner to set up and use). But be aware that you may encounter some small
+    syntax differences from database to database, or your query results may be returned in a different default order from
+    database to database.</p>
+
+<hr />
+
+<h2>Creating your first database</h2>
+
+<p>Fire up Terminal and head to your databases folder:</p>
+
+<div class="panel code">cd /projects/database_projects</div>
+
+<p>Don't forget that you can autocomplete paths in Terminal by hitting the Tab key.</p>
+
+<p>In this folder, let's use SQLite to create a database of adoptable animals:</p>
+
+<div class="panel code">sqlite3 adoptables.db</div>
+
+<p>You should wind up at a prompt that looks like this:</p>
+
+<div class="panel code">sqlite></div>
+
+<p>This is where you will type SQL commands. Your brand-new database awaits your instructions.</p>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="../img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>You get sick of database's stupid face, type ".exit".</p>
+            <p>You miss database and want visit, type "sqlite3 databasename.db".</p>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<h2>Your first table</h2>
+
+<p>At the moment, your database is blank. If we're going to have any fun, we need to add a table (the equivalent
+    of a spreadsheet page) to the database.</p>
+
+<p>Note that you don't have to type <strong>sqlite></strong> where it appears -- we're just showing you the
+    prompt you should already see on the screen.</p>
+
+<div class="panel code">
+    sqlite> CREATE TABLE Adoptables<br />
+    ...> (<br />
+    ...> AnimalID int AUTO_INCREMENT NOT NULL,
+    ...> Category varchar(20) NOT NULL,<br />
+    ...> Name varchar(30) NOT NULL,<br />
+    ...> Breed varchar(50) NOT NULL,<br />
+    ...> Description text<br />,
+    ...> PRIMARY KEY(AnimalID)
+    ...> );<br />
+</div>
+
+<p>We've created a table named <strong>Adoptables</strong>. The lengths we chose for our varchar fields
+    are pretty arbitrary; we're just guessing at what the maximum length might be. If users reported a lot
+    of trouble, we could give them more characters to work with by changing the data type later.</p>
+
+<p>We've specified <strong>NOT NULL</strong> anytime we wanted the database to require a value. You've probably
+    seen a representation of this data design anytime you've had to fill out a required field on a form.</p>
+
+<p>Let's see if there are any animals listed in our table:</p>
+
+<div class="panel code">
+    sqlite> SELECT * FROM Adoptables;
+</div>
+
+<p>Hmm, nope. Not yet. Let's add one.</p>
+
+<div class="panel code">
+    sqlite> INSERT INTO Adoptables<br />
+    ...> (Category, Name, Breed, Description)<br />
+    ...> VALUES ('Dog', 'Seamus', 'Labrador mix', 'A very friendly dog with black, curly hair!');
+</div>
+
+<p>Have you noticed that SQL doesn't really care about line breaks? SQL just waits for the semicolon with "...>",
+    which is SQL's way of saying "Go on ... ?" If you can't get a query to run, make sure you haven't forgotten the semicolon.</p>
+
+<p>Now let's see whether our Adoptables table has anything in it:</p>
+
+<div class="panel code">
+    sqlite> SELECT * FROM Adoptables;
+</div>
+
+<p>You should see our canine pal Seamus listed:</p>
+
+<div class="panel code">
+    Dog|Seamus|Labrador mix|A very friendly dog with black, curly hair!
+</div>
+
+<p>Most excellent! Use your new SQL knowledge to insert at least five more dogs and cats of your choosing.</p>
+
+<hr />
+
+<h2>Querying rows in a table</h2>
+
+<p>When it comes to viewing table data, you have quite a few querying options. Try these out.</p>
+
+<p>You can just ask for everything in a table:</p>
+
+<div class="panel code">
+    sqlite> SELECT * FROM Adoptables;
+</div>
+
+<p>... a certain field in a table:</p>
+
+<div class="panel code">
+    sqlite> SELECT Name FROM Adoptables;
+</div>
+
+<p>... multiple fields in the table:</p>
+
+<div class="panel code">
+    sqlite> SELECT Name, Breed FROM Adoptables;
+</div>
+
+<p>... animals meeting some criteria:</p>
+
+<div class="panel code">
+    sqlite> SELECT * FROM Adoptables WHERE Category='Dog';
+</div>
+
+<p>... just certain fields of animals meeting some criteria:</p>
+
+<div class="panel code">
+    sqlite> SELECT Name, Breed FROM Adoptables WHERE Category='Cat';
+</div>
+
+<p>... animals meeting multiple criteria:</p>
+<div class="panel code">
+    sqlite> SELECT * FROM Adoptables WHERE Category='Dog' AND Breed='Labrador mix';
+</div>
+
+<p>... animals meeting one criteria or another:</p>
+
+<div class="panel code">
+    sqlite> SELECT Name FROM Adoptables WHERE Category='Dog' OR Category='Hamster';<br />
+    sqlite> SELECT * FROM Adoptables WHERE Category='Dog' OR Name='Fluffy';
+</div>
+
+<p>... animals with names that start or end with certain letters (with % used as wildcard):</p>
+
+<div class="panel code">
+    sqlite> SELECT * FROM Adoptables WHERE Name LIKE 'Sea%';
+</div>
+
+<p>It's also possible to use <strong>></strong>, <strong><</strong>, <strong>IS NULL</strong>,
+    <strong>IS NOT NULL</strong>, and so on. If you want to make a specific SQL query and aren't sure how,
+    Google is your friend!</p>
+
+<hr />
+
+<h2>Primary keys</h2>
+
+<p>Let's try a little experiment. What if yet another wonderful Labrador mix named Seamus shows up at the animal shelter?</p>
+
+<p>You're going to have to add him to your database, even though another dog with his attributes already exists.
+Will it work?</p>
+
+<div class="panel code">
+    sqlite> INSERT INTO Adoptables<br />
+    ...> (Category, Name, Breed, Description)<br />
+    ...> VALUES ('Dog', 'Seamus', 'Labrador mix', 'A very friendly dog with black, curly hair!');<br />
+</div>
+
+<p>The database doesn't seem to mind having two exact rows. That's because a hidden value in SQLite, the ROWID,
+is still unique for each dog. Take a look:</p>
+
+<div class="panel code">
+    SELECT ROWID, * FROM Adoptables WHERE Name='Seamus';
+</div>
+
+<p>You'll see that each dog has his own ID number, even if it's not normally displayed to you. In this case, the
+ROWID is what we're using to uniquely identify each dog. That ID doesn't change, even if some animals are deleted
+from the system and the ROWIDs are no longer contiguous.</p>
+
+<p>Sometimes, using an autoincrementing row ID is a perfectly fine way to identify a particular item in a database.
+Machines keep track of numbers quite nicely, so even if you write the exact same tweet twice, Twitter will always
+be able to tell the difference between tweet 1928 and tweet 903.</p>
+
+<p>Humans have quite a bit more trouble, though. The animal shelter could note each animal's ID
+number somewhere in the animal's paperwork, but it might be easier to use a different primary key, such as the
+animal's name. If the shelter is relatively small, it wouldn't be too difficult for employees to give each stray
+a unique name when the animal arrives.</p>
+
+<p>Similarly, some companies might use each customer's email address as a primary key, because email addresses are unique.
+Most of the time, though, because machines are doing the work anyway, ROWID or the database equivalent is used.</p>
+
+<p>We haven't entered much data, and updating a table can be a little complicated, so let's just delete our table and
+start over. We need the practice anyway!</p>
+
+<div class="panel code">
+    sqlite> DROP TABLE Adoptables;<br />
+    sqlite> CREATE TABLE Adoptables<br />
+    ...> (         <br />
+    ...> Category varchar(20) NOT NULL,<br />
+    ...> Name varchar(30) NOT NULL,<br />
+    ...> Breed varchar(50) NOT NULL,<br />
+    ...> Description text,<br />
+    ...> PRIMARY KEY(Name)<br />
+    ...> );<br />
+</div>
+
+<p>Note that this time, we've told our database to use Name as our primary key.</p>
+
+<p>Now let's insert a cat, Fluffy, into the table:</p>
+
+<div class="panel code">
+    sqlite> INSERT INTO Adoptables<br />
+    ...> (Category, Name, Breed, Description)<br />
+    ...> VALUES ('Cat', 'Fluffy', 'Tabby', "A purry lapcat you'll want to take home today!");<br />
+</div>
+
+<p>What happens if you try to do this a second time? You should see an error. Two cats named 'Fluffy' cannot exist
+in this table, because Name is our primary key, and primary keys must be unique.</p>
+
+<p>Time to practice inserting more rows: add a few more animals. Be sure to give them unique names!</p>
+
+</div>
+
+<script>
+    document.write('<script src=' +
+            ('__proto__' in {} ? 'js/vendor/zepto' : 'js/vendor/jquery') +
+            '.js><\/script>')
+</script>
+
+<script src="../js/foundation.min.js"></script>
+<!--
+
+<script src="js/foundation/foundation.js"></script>
+
+<script src="js/foundation/foundation.dropdown.js"></script>
+
+<script src="js/foundation/foundation.placeholder.js"></script>
+
+<script src="js/foundation/foundation.forms.js"></script>
+
+<script src="js/foundation/foundation.tooltips.js"></script>
+
+-->
+
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>
+
+
+
+

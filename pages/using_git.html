@@ -16,251 +16,321 @@
 <body>
 
 <div class="row">
-    <div class="large-3 columns">
-        <div class="row">
-            <div class="large-11 columns">
-                <div class="panel" style="padding-left: 40px; min-height: 1000px;">
-                    <ol>
-                        <li><a href="getting_started.html">Getting Started</a></li>
-                        <li><a href="using_terminal.html">Using Terminal</a></li>
-                        <li><a href="using_git.html">Using Git</a></li>
-                    </ol>
-                </div>
+<div class="large-3 columns">
+    <div class="row">
+        <div class="large-11 columns">
+            <div class="panel" style="padding-left: 40px; min-height: 1000px;">
+                <ol>
+                    <li><a href="getting_started.html">Getting Started</a></li>
+                    <li><a href="using_terminal.html">Using Terminal</a></li>
+                    <li><a href="using_git.html">Using Git</a></li>
+                </ol>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="large-9 columns">
+<div class="large-9 columns">
 
-        <h1 class="pretty">Using Git</h1>
+<h1 class="pretty">Using Git</h1>
 
-        <h2 id="starting_terminal">About version control</h2>
+<h2 id="starting_terminal">About version control</h2>
 
-        <div class="panel jane">
-            <div class="row">
-                <div class="large-3 columns">
-                    <img src="../img/jane.png" />
-                </div>
-                <div class="large-9 columns">
-                    <h5 class="jane">JANE SAY:</h5><br />
-                    <p>Git like magic time machine to go back to past.</p>
-                    <p>Git take you all the way back to before fur dress invented!</p>
-                </div>
-            </div>
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="../img/jane.png" />
         </div>
-
-        <p>If you've done much programming, you know that false starts are inevitable. Backtracking once you've developed
-            your code in the wrong direction can be painful. That's where version control comes in.</p>
-
-        <p><em>From here on out, everything program you write or website you build should be in version control.</em> <strong>Git</strong>
-            is the program you'll use locally (on your computer). <strong>GitHub</strong> is a separate but useful service that
-            stores Git repositories online for you -- kind of like Flickr, but for repositories.</p>
-
-        <p>It's easy to get Git and GitHub confused or treat them as the same thing, but they aren't. You don't have to use GitHub --
-            other services, like Bitbucket, are available. But GitHub is a common industry standard, so we'll go with that.</p>
-
-        <p>A few advantages of version control:</p>
-
-        <ul>
-            <li>Git creates save points (known as <strong>commits</strong>) that you can roll back to.</li>
-            <li>Git allows you to branch off from your code, so you can try a few approaches and see which works better.</li>
-            <li>If you use GitHub to store your code, it's backed up safely and you won't lose it.</li>
-        </ul>
-
-        <h2>The basic Git cycle</h2>
-
-        <p>Your most common workflow will go like this:</p>
-
-        <ol>
-            <li>Run <strong>git pull</strong> to make sure you're in sync with GitHub (in other words, that you have the
-                most current code, as another developer could have changed it elsewhere)</li>
-            <li>Create a new file, or modify an existing one</li>
-            <li>Use <strong>git add [filename]</strong> in Terminal to add the changed/new file to the set of files you intend to commit
-                (this is also known as <strong>staging</strong> the file)</li>
-            <li>Use <strong>git commit -m "commit message"</strong> to create the actual save point</li>
-            <li>Optionally, use <strong>git push</strong> to push your changes up to GitHub for online storage, but most
-                programmers just do this periodically, rather than every time</li>
-        </ol>
-
-        <p>That's the basic loop you'll go through over and over, but you might also occasionally use other commands
-            to recover from a mistake. We'll practice the basic commands first, then look at a few special cases.</p>
-
-        <p>When you decide to build a complex project, it should have its own Git repo. But for now, your entire web
-            projects folder is one big repo. (So are your other folders, such as your database folder, etc.)</p>
-
-        <p>In other words, if you visited GitHub right now (try it!), you'd see that you have four repos -- one for
-            each of your folders in /projects.</p>
-
-        <p>Because any websites you make at this stage are likely simply for learning purposes, keeping several small projects in one Git
-            repo is fine. But if you decide to build a real-world website that will actually see the light of day, put it
-            in its own dedicated repository. Instructions for doing that appear at the bottom of this page.</p>
-
-        <h2>Git exercise: Creating a web project</h2>
-        <div class="panel"><p>Note: Each command shown can be typed on one line. Any line breaks you see are not part of
-            the code.</p></div>
-        <table>
-            <tr>
-                <td>COMMAND</td>
-                <td>EXPLANATION</td>
-            </tr>
-            <tr>
-                <td>???</td>
-                <td>In Terminal, go to the appropriate and rather obviously named folder where you might create a new web project. If you aren't
-                    sure where to go, <strong>cd /projects</strong> and a look around will get you started.</td>
-            </tr>
-            <tr>
-                <td>git pull</td>
-                <td>Make sure no one else has changed your code elsewhere and pushed it up to GitHub, leaving your
-                    local code outdated. You don't work on a team of developers at this point, so ... probably not.
-                    But still, good habits are important!</td>
-            </tr>
-            <tr>
-                <td>mkdir your_project_name</td>
-                <td>Create a new folder for your project.</td>
-            </tr>
-            <tr>
-                <td>cd your_project_name</td>
-                <td>Change to your project directory.</td>
-            </tr>
-            <tr>
-                <td>touch&nbsp;index.html&nbsp;;&nbsp;touch&nbsp;style.css</td>
-                <td>You can create two files in one line by separating the commands with a semicolon.</td>
-            </tr>
-            <tr>
-                <td>ls</td>
-                <td>Verify that the files were created as expected.</td>
-            </tr>
-            <tr>
-                <td>git add --all</td>
-                <td>In Bash, the . is shorthand for "this entire folder". We want to add everything in our folder
-                    to our pending commit. Note that this does not actually add the files to the repository -- it just
-                    adds them to the "staging area", kind of like putting them in a box but not shipping it yet. It ain't
-                    over until the fat lady actually commits. While singing, probably.</td>
-            </tr>
-            <tr>
-                <td>git status</td>
-                <td>You can run this command anytime; running it often is a good habit. It just says, "Hey, Git,
-                    where we at with the version control? Note that your response lists two files as "to be committed."
-                    It also includes instructions for removing a file from that list if you've made a mistake and prefer
-                    to leave a file out of version control (perhaps you just aren't quite finished editing it yet, or maybe
-                    it's a private file that you just use locally for your own purposes).</td>
-            </tr>
-            <tr>
-                <td>git commit -m "Add blank project files"</td>
-                <td>This is where the magic actually happens and you add your changes to your repo.
-                    Don't worry, just about anything in Git can be undone. That's the entire point of version control!
-                    Your commit message should simply state what you've accomplished with these most recent changes.</td>
-            </tr>
-            <tr>
-                <td>git push origin master</td>
-                <td>This pushes your new code up to GitHub. You'll be asked for your username and password to GitHub.
-                    You won't be able to see anything as you type -- that's normal. Disconcerting, but normal.</td>
-            </tr>
-            <tr>
-                <td>git status</td>
-                <td>This is just to verify that your working directory is "clean", meaning that you don't have any
-                    untracked changes that haven't been committed into your repository. We've just committed all of our
-                    changes, so everything should be in sync.</td>
-            </tr>
-
-            <tr>
-                <td>echo "Just changing this file for the sake of it!" >> index.html</td>
-                <td>Normally, you'd edit your files in Notepad++, but we're just making a quick change to the files so
-                    we can go through the version control cycle one more time.</td>
-            </tr>
-            <tr>
-                <td>git status</td>
-                <td>Git should tell you that you have some untracked changes, and list the name of any modified file.
-                    You should see index.html listed as a file that has been modified.</td>
-            </tr>
-            <tr>
-                <td>git add index.html</td>
-                <td>We're letting Git know that we intend to commit the changes in this file, so we're getting the
-                    commit packaged up and ready to go.</td>
-            </tr>
-            <tr>
-                <td>git commit -m "Add verbiage"</td>
-                <td>Our changes have now been committed.</td>
-            </tr>
-            <tr>
-                <td>git push origin master</td>
-                <td>Pushing the commit up to GitHub -- you don't have to do this every single time you commit. In fact,
-                    your team will likely find you annoying if you do, as it's not unusual for them to receive an
-                    email notification each time. It's common for programmers to just push once right before they leave the office for the day.</td>
-            </tr>
-            <tr>
-                <td>???</td>
-                <td>You can go through the "modify file, add file, commit file, push" cycle as many times as you'd like
-                    for practice.</td>
-            </tr>
-        </table>
-
-        <p>Congratulations, Git graduate. While Git is an incredibly complex tool, you've now learned enough to implement
-            basic version control in your projects.</p>
-
-        <div class="panel jane">
-            <div class="row">
-                <div class="large-3 columns">
-                    <img src="../img/jane.png" />
-                </div>
-                <div class="large-9 columns">
-                    <h5 class="jane">JANE SAY:</h5><br />
-                    <p>You know enough Git to survive in the wild.</p>
-                    <p>New Git skills look good on you, like polished tooth necklace!</p>
-                </div>
-            </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>Git like magic time machine to go back to past.</p>
+            <p>Git take you all the way back to before fur dress invented!</p>
         </div>
-
-
-    <hr />
-
-    <h2>FAQ</h2>
-        <p><strong>How do I access an older version of my code?</strong></p>
-
-        <p>Several methods will work. If you go on GitHub, you'll see that each commit has a unique identifier
-        (something long and complicated, like 5da5981a813eb257e027cf38662502b5930cd0f3). <strong>git checkout [commit identifier]</strong>
-        will take you back in time -- your project folder will look just as it did at the time, and your code will
-        run as it did at the time. The exception is that any uncommitted local files you had hanging around in your folder
-        will still be present.</p>
-
-        <p><strong>How often should I commit?</strong></p>
-
-        <p>You should commit relatively frequently. At some point, you might break your code and not notice for
-        quite a while. With Git, it's easy to roll back to previous commits until you find one that isn't broken.
-        If your commits are small, you'll then find it quite easy to review the bad commit to figure out
-        where you went wrong.</p>
-
-        <p>If the bad commit has 5,000 changed lines in it? Not so much. Have fun finding the problem.</p>
-
-        <p>Commit anytime you get to a logical stopping place -- maybe you've just defined a new method or
-        finished writing a loop. Don't get so into your code that you forget to commit for quite a long time --
-        you may regret it!</p>
-
-        <p><strong>If I run git status, I see a line that says "git branch master". What does that mean?</strong></p>
-
-        <p>The master branch is the default branch of a repo. Even though we just did it in the above exercise, it's
-        actually <i>not</i> a great idea to work on the master branch. Most new programmers work on the master branch
-        for the sake of simplicity (and because they're not working with a team), but at a real company, the master
-        branch often contains the code for the actual deployed application. You can see how it might be a bad idea
-        to start committing to that code when you aren't even sure you're headed in the right direction with an idea.</p>
-
-        <p>For safety reasons, and to avoid crashing into one another in terms of working on the same code at the same time,
-           developers will typically branch off from master, develop a feature, and merge the code back into master
-           when the feature is complete, tested, and ready to go.</p>
-
-        <p>If this idea confuses you, think of it as pulling off the racetrack to fix up your car, rather than
-        trying to fix it while still racing on the track. It's safer to remove yourself from the race,
-        improve your car (or section of the website), verify that everything is running smoothly, and then merge back in.</p>
-
-        <p>For now, it's up to you whether to work on master. Instructions for getting fancy and creating your own
-        branch are at the bottom of this page.</p>
-
-        <p><strong>I made a mistake in my last commit and want to fix it.</strong></p>
-
-        <p>You can amend a commit by making the desired changes, adding the modified files to staging, and then
-        running <strong>git commit --amend -m "New commit message"</strong>. Git has a ton of tricks like that --
-        almost too many!</p>
     </div>
+</div>
+
+<p>If you've done much programming, you know that false starts are inevitable. Backtracking once you've developed
+    your code in the wrong direction can be painful. That's where version control comes in.</p>
+
+<p><em>From here on out, everything program you write or website you build should be in version control.</em> <strong>Git</strong>
+    is the program you'll use locally (on your computer). <strong>GitHub</strong> is a separate but useful service that
+    stores Git repositories online for you -- kind of like Flickr, but for repositories.</p>
+
+<p>It's easy to get Git and GitHub confused or treat them as the same thing, but they aren't. You don't have to use GitHub --
+    other services, like Bitbucket, are available. But GitHub is a common industry standard, so we'll go with that.</p>
+
+<p>A few advantages of version control:</p>
+
+<ul>
+    <li>Git creates save points (known as <strong>commits</strong>) that you can roll back to.</li>
+    <li>Git allows you to branch off from your code, so you can try a few different approaches simultaneously and see which works better.</li>
+    <li>If you use GitHub to store your code, it's backed up safely and you won't lose it.</li>
+</ul>
+
+<div class="panel">
+    <p><strong>IMPORTANT</strong>: Unless you have a paid subscription with GitHub, all of your repositories are
+        viewable to the public.</p>
+
+    <p>It's fine to build a fun project for yourself involving kittens and magic sorcerers
+        (the programming community loves creativity!) but even the whimsical stuff should be kept relatively professional.
+        Even if you're just writing test copy, don't make offensive or personal jokes that you wouldn't want a potential
+        boss to see.</p>
+</div>
+
+<hr />
+
+<h2>The basic Git cycle</h2>
+
+<p>Your most common workflow will go like this:</p>
+
+<ol>
+    <li>Run <strong>git pull</strong> to make sure you're in sync with GitHub (in other words, that you have the
+        most current code, as another developer could have changed it elsewhere)</li>
+    <li>Create a new file, or modify an existing one</li>
+    <li>Use <strong>git add [filename]</strong> in Terminal to add the changed/new file to the set of files you intend to commit
+        (this is also known as <strong>staging</strong> the file)</li>
+    <li>Use <strong>git commit -m "commit message"</strong> to create the actual save point</li>
+    <li>Optionally, use <strong>git push</strong> to push your changes up to GitHub for online storage, but most
+        programmers just do this periodically, rather than every time</li>
+</ol>
+
+<p>That's the basic loop you'll go through over and over, but you might also occasionally use other commands
+    to recover from a mistake. We'll practice the basic commands first, then look at a few special cases.</p>
+
+<p>When you decide to build a complex project, it should have its own Git repo. But for now, your entire web
+    projects folder is one big repo. (So are each of your other folders, such as your database folder, etc.)</p>
+
+<p>In other words, if you visited GitHub right now (try it!), you'd see that you have four repos -- one for
+    each of your folders in /projects.</p>
+
+<p>Because any websites you make at this stage are likely simply for learning purposes, keeping several small projects in one Git
+    repo is fine. But if you decide to build a real-world website that will actually see the light of day, put it
+    in its own dedicated repository. Instructions for doing that appear at the bottom of this page.</p>
+
+<hr />
+
+<h2>Git exercise: Creating a web project</h2>
+<div class="panel"><p>Note: Each command shown can be typed on one line. Any line breaks you see are not part of
+    the code.</p></div>
+<table>
+    <tr>
+        <td>COMMAND</td>
+        <td>EXPLANATION</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>In Terminal, go to the appropriate and rather obviously named folder where you might create a new web project. If you aren't
+            sure where to go, <strong>cd /projects</strong> and a look around will get you started.</td>
+    </tr>
+    <tr>
+        <td>git pull</td>
+        <td>Make sure no one else has changed your code elsewhere and pushed it up to GitHub, leaving your
+            local code outdated. You don't work on a team of developers at this point, so ... probably not.
+            But still, good habits are important!</td>
+    </tr>
+    <tr>
+        <td>mkdir your_project_name</td>
+        <td>Create a new folder for your project.</td>
+    </tr>
+    <tr>
+        <td>cd your_project_name</td>
+        <td>Change to your project directory.</td>
+    </tr>
+    <tr>
+        <td>touch&nbsp;index.html&nbsp;;&nbsp;touch&nbsp;style.css</td>
+        <td>You can create two files in one line by separating the commands with a semicolon.</td>
+    </tr>
+    <tr>
+        <td>ls</td>
+        <td>Verify that the files were created as expected.</td>
+    </tr>
+    <tr>
+        <td>git add --all</td>
+        <td>In Bash, the . is shorthand for "this entire folder". We want to add everything in our folder
+            to our pending commit. Note that this does not actually add the files to the repository -- it just
+            adds them to the "staging area", kind of like putting them in a box but not shipping it yet. It ain't
+            over until the fat lady actually commits. While singing, probably.</td>
+    </tr>
+    <tr>
+        <td>git status</td>
+        <td>You can run this command anytime; running it often is a good habit. It just says, "Hey, Git,
+            where we at with the version control? Note that your response lists two files as "to be committed."
+            It also includes instructions for removing a file from that list if you've made a mistake and prefer
+            to leave a file out of version control (perhaps you just aren't quite finished editing it yet, or maybe
+            it's a private file that you just use locally for your own purposes).</td>
+    </tr>
+    <tr>
+        <td>git commit -m "Add blank project files"</td>
+        <td>This is where the magic actually happens and you add your changes to your repo.
+            Don't worry, just about anything in Git can be undone. That's the entire point of version control!
+            Your commit message should simply state what you've accomplished with these most recent changes.</td>
+    </tr>
+    <tr>
+        <td>git push origin master</td>
+        <td>This pushes your new code up to GitHub. You'll be asked for your username and password to GitHub.
+            You won't be able to see anything as you type -- that's normal. Disconcerting, but normal.</td>
+    </tr>
+    <tr>
+        <td>git status</td>
+        <td>This is just to verify that your working directory is "clean", meaning that you don't have any
+            untracked changes that haven't been committed into your repository. We've just committed all of our
+            changes, so everything should be in sync.</td>
+    </tr>
+
+    <tr>
+        <td>echo "Just changing this file for the sake of it!" >> index.html</td>
+        <td>Normally, you'd edit your files in Notepad++, but we're just making a quick change to the files so
+            we can go through the version control cycle one more time.</td>
+    </tr>
+    <tr>
+        <td>git status</td>
+        <td>Git should tell you that you have some untracked changes, and list the name of any modified file.
+            You should see index.html listed as a file that has been modified.</td>
+    </tr>
+    <tr>
+        <td>git add index.html</td>
+        <td>We're letting Git know that we intend to commit the changes in this file, so we're getting the
+            commit packaged up and ready to go.</td>
+    </tr>
+    <tr>
+        <td>git commit -m "Add verbiage"</td>
+        <td>Our changes have now been committed.</td>
+    </tr>
+    <tr>
+        <td>git push origin master</td>
+        <td>Pushing the commit up to GitHub -- you don't have to do this every single time you commit. In fact,
+            your team will likely find you annoying if you do, as it's not unusual for them to receive an
+            email notification each time. It's common for programmers to just push once right before they leave the office for the day.</td>
+    </tr>
+    <tr>
+        <td>???</td>
+        <td>You can go through the "modify file, add file, commit file, push" cycle as many times as you'd like
+            for practice.</td>
+    </tr>
+</table>
+
+<p>Congratulations, Git graduate. While Git is an incredibly complex tool, you've now learned enough to implement
+    basic version control in your projects.</p>
+
+<div class="panel jane">
+    <div class="row">
+        <div class="large-3 columns">
+            <img src="../img/jane.png" />
+        </div>
+        <div class="large-9 columns">
+            <h5 class="jane">JANE SAY:</h5><br />
+            <p>You know enough Git to survive in the wild.</p>
+            <p>New Git skills look good on you, like polished tooth necklace!</p>
+        </div>
+    </div>
+</div>
+
+
+<hr />
+
+<h2>Some considerations</h2>
+<p><strong>What dangerous commands should I avoid as a beginner?</strong></p>
+
+<p><strong>reset</strong> and <strong>force</strong> should be used very carefully. If you're trying to solve an issue
+and the solution you find online involves those commands (especially <strong>force</strong>), ask for help unless you're sure you know what you're doing.</p>
+
+<p><strong>When <em>shouldn't</em> I add a file to my repository?</strong></p>
+
+<p>Consider whether your repository is available to the public. If it is, avoid committing any configuration
+    files that include passwords or other sensitive information.</p>
+
+<p>Depending on your operating system and the nature of your project, other files may pop up that you should
+    avoid committing. On a Mac, for instance, it's often considered best practice to avoid committing .DS_Store files
+    (which are automatically created by the operating system).</p>
+
+<p>It will take a while to get the hang of how all of this works. In the short term, focus on committing only the
+    files that you have created or modified yourself. If you type 'git status' and see an untracked file you don't recognize, it may
+    have been automatically created by your computer and may not belong in a repo.</p>
+
+<p>If you would like to ignore files of a certain type, you can create a file called <strong>.gitignore</strong> in
+    your directory, and add the files you'd like to avoid. You can then add and commit the .gitignore file.</p>
+
+<p>A sample .gitignore file that could be put in any given directory on a Mac machine to avoid accidentally committing
+    .DS_Store files into the repo:</p>
+
+<h5>projects/.gitignore</h5>
+<div class="panel code">
+    ## Files to ignore, using * as a wildcard match<br />
+    *.DS_Store
+</div>
+
+<p>If you'd like to practice, feel free to create the file above in Notepad++ and commit it to your repo.</p>
+
+<p><strong>How do I access an older version of my code?</strong></p>
+
+<p>Several methods will work. If you go on GitHub, you'll see that each commit has a unique identifier
+    (something long and complicated, like 5da5981a813eb257e027cf38662502b5930cd0f3). <strong>git checkout [commit identifier]</strong>
+    will take you back in time -- your project folder will look just as it did at the time, and your code will
+    run as it did at the time. The exception is that any uncommitted local files you had hanging around in your folder
+    will still be present.</p>
+
+<p><strong>How often should I commit?</strong></p>
+
+<p>You should commit relatively frequently. At some point, you might break your code and not notice for
+    quite a while. With Git, it's easy to roll back to previous commits until you find one that isn't broken.
+    If your commits are small, you'll then find it quite easy to review the bad commit to figure out
+    where you went wrong.</p>
+
+<p>If the bad commit has 5,000 changed lines in it? Not so much. Have fun finding the problem.</p>
+
+<p>Commit anytime you get to a logical stopping place -- maybe you've just defined a new method or
+    finished writing a loop. Don't get so into your code that you forget to commit for quite a long time --
+    you may regret it!</p>
+
+<p><strong>If I run git status, I see a line that says "git branch master". What does that mean?</strong></p>
+
+<p>The master branch is the default branch of a repo. Even though we just did it in the above exercise, it's
+    actually <i>not</i> a great idea to work on the master branch. Most new programmers work on the master branch
+    for the sake of simplicity (and because they're not working with a team), but at a real company, the master
+    branch often contains the code for the actual deployed application. You can see how it might be a bad idea
+    to start committing to that code when you aren't even sure you're headed in the right direction with an idea.</p>
+
+<p>For safety reasons, and to avoid crashing into one another in terms of working on the same code at the same time,
+    developers will typically branch off from master, develop a feature, and merge the code back into master
+    when the feature is complete, tested, and ready to go.</p>
+
+<p>If this idea confuses you, think of it as pulling off the racetrack to fix up your car, rather than
+    trying to fix it while still racing on the track. It's safer to remove yourself from the race,
+    improve your car (or section of the website), verify that everything is running smoothly, and then merge back in.</p>
+
+<p>For now, it's up to you whether to work on master. Instructions for getting fancy and creating your own
+    branch are at the bottom of this page.</p>
+
+<p><strong>I made a mistake in my last commit and want to fix it.</strong></p>
+
+<p>You can amend a commit by making the desired changes, adding the modified files to staging, and then
+    running <strong>git commit --amend -m "New commit message"</strong>. Git has a ton of tricks like that --
+    almost too many!</p>
+
+<hr />
+
+<h2>How to Branch</h2>
+
+<p>As mentioned earlier, it's best to make a new branch anytime you're doing new work on an existing project. This
+involves just a few additional steps.</p>
+
+<ol>
+    <li>Go to the directory of the project you'd like to work on</li>
+    <li>Run <strong>git checkout -b new_branch_name</strong> to create and check out your new branch -- the name can
+        reflect whatever you intend to do, such as <strong>css_tweaks</strong> or <strong>database_upgrades</strong>.</li>
+    <li>Run <strong>git status</strong> to verify that you are on the desired branch.</li>
+    <li>Work on your project, adding and committing files as you go. If you want to push your new branch to GitHub
+    at any point, <strong>git push origin new_branch_name</strong> will take care of that.</li>
+    <li>When you've reached a good stopping place and everything is working well, you can merge back into master (or
+        whichever branch you're merging back into) by running <strong>git checkout master</strong> to check out
+        the master branch, and then <strong>git merge new_branch_name</strong> to pull in changes.</li>
+    <li>Running <strong>git branch</strong> will show you a list of branches, with a star by the name of the one
+    you are currently on.</li>
+    <li>If you've finished with your new branch and would like to delete it, run <strong>git branch -D new_branch_name</strong>
+        to clean up after yourself. (If you pushed to GitHub, you will need to delete the branch on GitHub as well.) That's it!</li>
+</ol>
+
+</div>
 </div>
 
 

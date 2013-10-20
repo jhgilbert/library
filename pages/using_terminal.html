@@ -61,7 +61,8 @@
 <p>Terminal is a way of communicating more directly with your computer. You're used to using software that uses graphics,
     colors, menus, and other fancy things. Terminal's interface is much simpler, but the program itself is extremely powerful.</p>
 
-<p>Case in point: Simply typing <strong>sudo rm -rf /</strong> into Terminal will <em>wipe out your computer</em>.</p>
+<p>Case in point: Simply typing <strong>rm -rf /</strong> into Terminal can <em>wipe out your computer</em>. The <strong>rm -rf</strong> command
+    is so potentially dangerous even among tech professionals that it was once responsible for wiping out 90% of <i>Toy Story 2</i>. <a href="http://spinoff.comicbookresources.com/2013/03/27/movie-legends-revealed-was-toy-story-2-nearly-deleted/">True story!</a></p>
 
 <p>So, hey, don't do that, and be wary of any Terminal command you see in a forum where someone might be
     messing with you. Places like <a href="http://stackoverflow.com">Stack Overflow</a> are well moderated (if a bit cranky
@@ -339,6 +340,9 @@
 <p>Terminal is capable of running very complicated commands, but you'll likely use the same basic ones over and over.
     <strong>pwd</strong>, <strong>cd</strong>, <strong>ls</strong>, <strong>touch</strong>, and <strong>ruby</strong> are all safe to use -- worst
     case, you'll just get an error, but you won't break anything. Use <strong>rmdir</strong> and <strong>rm</strong> more carefully.</p>
+
+<p><strong>rm -rf [directoryname]</strong>, which is used to delete a directory that is not empty (<strong>rmdir</strong> will not work on a directory
+that contains files), should be used most carefully of all.</p>
 
 <p>I know Jane just told you, but <strong>read your output</strong>. Plenty of students will blindly follow
     instructions without paying attention to the feedback that Terminal is giving. If you've mistyped a command,
